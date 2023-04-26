@@ -1,0 +1,35 @@
+jenkins:
+  numExecutors: 1
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+      - "Overall/Administer:anonymous"
+
+unclassified:
+  location:
+    url: "http://localhost:8080/"
+
+security:
+  scriptApproval:
+    approvedSignatures:
+    - "field hudson.PluginManager activePlugins"
+    - "field hudson.PluginManager$FailedPlugin name"
+    - "method hudson.PluginManager getFailedPlugins"
+    - "method hudson.PluginManager getPlugins"
+    - "method jenkins.model.Jenkins getPluginManager"
+    - "staticMethod jenkins.model.Jenkins getInstance"
+
+jobs:
+  - script: |
+      pipelineJob('test') {
+        quietPeriod(0)
+        definition {
+          cps {
+            script """
+              println 'test'
+            """
+            sandbox()
+          }
+        }
+      }
+      queue('test')
