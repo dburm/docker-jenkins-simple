@@ -1,10 +1,7 @@
 configuration-as-code
-configuration-as-code-groovy
-hashicorp-vault-plugin
 job-dsl
 matrix-auth
 workflow-cps
 workflow-job
 workflow-scm-step
-
 
