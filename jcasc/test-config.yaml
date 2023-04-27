@@ -16,7 +16,11 @@ jobs:
         definition {
           cps {
             script """
-              println 'test'
+              node('built-in') {
+                  stage('Print env') {
+                      sh 'env'
+                  }
+              }
             """
             sandbox()
           }

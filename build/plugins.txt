@@ -1,7 +1,11 @@
 configuration-as-code
+git
 job-dsl
 matrix-auth
+pipeline-stage-step
+pipeline-stage-view
+pipeline-utility-steps
+workflow-basic-steps
 workflow-cps
 workflow-job
 workflow-scm-step
-
