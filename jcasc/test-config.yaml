@@ -2,8 +2,11 @@ jenkins:
   numExecutors: 1
   authorizationStrategy:
     globalMatrix:
-      permissions:
-      - "USER:Overall/Administer:anonymous"
+      entries:
+      - user:
+          name: "anonymous"
+          permissions:
+          - "Overall/Administer"
 
 unclassified:
   location:

@@ -1,13 +1,11 @@
 ---
-version: '3'
-
 services:
   jenkins:
     build:
       context: ./build
     restart: unless-stopped
     environment:
-      - CASC_JENKINS_CONFIG=/var/jenkins_home/jcasc
+      #- CASC_JENKINS_CONFIG=/var/jenkins_home/jcasc
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
     volumes:
       - ./workspace:/var/jenkins_home
@@ -15,4 +13,3 @@ services:
     ports:
       - 8080:8080
       - 50000:50000
-
